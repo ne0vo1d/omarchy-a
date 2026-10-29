@@ -14,6 +14,13 @@ virtual-environment activation or published Orchard release is required.
 Existing submodule checkouts and local edits are never reset or updated. Cloning
 with `--recurse-submodules` also works.
 
+Get the source first:
+
+```sh
+git clone https://github.com/OrchardLinux/omarchy-a
+cd omarchy-a
+```
+
 For a minimal RAM boot:
 
 ```sh
@@ -46,6 +53,14 @@ SSH (`transport = false` in the example's `orchard.toml`, as in `minimal-boot`).
 | Device | Identifier | Status |
 | --- | --- | --- |
 | iPad 6 Wi-Fi | `iPad7,5` / J71b | Experimental; no GPU acceleration |
+
+The pinned [hardware](https://github.com/OrchardLinux/hardware) layer also has experimental support for devices that don't run the Omarchy A desktop yet:
+
+| Device | Identifier | Status |
+| --- | --- | --- |
+| iPad Air 2 Wi-Fi | `iPad5,3` / J81 | Hardware bring-up only; RAM boot via `examples/hardware-check`; no desktop image yet. See [j81.md](https://github.com/OrchardLinux/hardware/blob/main/docs/integration/j81.md) |
+| iPad Air 2 Cellular | `iPad5,4` / J82 | Untested; hardware bring-up only; no desktop image |
+| iPhone 6 | `iPhone7,2` / N61 | Hardware bring-up only; no desktop image on main yet. See [n61-bringup.md](https://github.com/OrchardLinux/hardware/blob/main/docs/n61-bringup.md) |
 
 This image uses **tethered boot**: starting Linux after a cold restart requires a host computer running `orchard launch`.
 
